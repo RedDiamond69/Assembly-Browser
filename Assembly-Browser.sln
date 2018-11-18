@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyBrowser", "AssemblyBrowser\AssemblyBrowser.csproj", "{BCB9358E-C038-4C1A-AF9B-5EA982B4BD8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyBrowserUnitTests", "AssemblyBrowserUnitTests\AssemblyBrowserUnitTests.csproj", "{EAB63BB8-9738-47B3-BD50-6A0A63FAAAA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BCB9358E-C038-4C1A-AF9B-5EA982B4BD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCB9358E-C038-4C1A-AF9B-5EA982B4BD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCB9358E-C038-4C1A-AF9B-5EA982B4BD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB63BB8-9738-47B3-BD50-6A0A63FAAAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB63BB8-9738-47B3-BD50-6A0A63FAAAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB63BB8-9738-47B3-BD50-6A0A63FAAAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB63BB8-9738-47B3-BD50-6A0A63FAAAA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
