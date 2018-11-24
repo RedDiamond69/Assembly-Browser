@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssemblyAnalyzer.Declarations.Members
 {
-    class FieldDeclaration
+    public class FieldDeclaration
     {
     }
 }
