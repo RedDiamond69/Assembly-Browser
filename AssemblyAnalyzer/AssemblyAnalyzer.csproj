@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Declarations\NamespaceDeclaration.cs" />
     <Compile Include="IAssemblyAnalyzer.cs" />
     <Compile Include="Info\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
