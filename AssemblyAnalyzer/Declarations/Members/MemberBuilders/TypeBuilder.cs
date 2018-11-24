@@ -87,7 +87,18 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 
         private AccessModifiers GetModifiers()
         {
-
+            List<string> modifiers = new List<string>();
+            List<string> sharpModifiers = new List<string>();
+            TypeAttributes typeAttributes = _tInfo.Attributes & ~TypeAttributes.ClassSemanticsMask;
+            modifiers = typeAttributes.ToString().Split(',').ToList();
+            modifiers = modifiers.Select(str => str.Trim().ToLower()).ToList();
+            TypeAttributes accessAttributes = typeAttributes & TypeAttributes.VisibilityMask;
+            sharpModifiers.AddRange(GetAccessModifiers(accessAttributes));
+            if ((typeAttributes & TypeAttributes.Sealed) != 0)
+                sharpModifiers.Add("sealed");
+            if ((typeAttributes & TypeAttributes.Abstract) != 0)
+                sharpModifiers.Add("abstract");
+            return new AccessModifiers(modifiers, sharpModifiers);
         }
     }
 }
