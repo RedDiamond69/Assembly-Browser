@@ -82,7 +82,35 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 
         private List<string> GetAccessModifiers(TypeAttributes attributes)
         {
-
+            List<string> accessModifiers = new List<string>();
+            switch (attributes)
+            {
+                case TypeAttributes.Public:
+                    accessModifiers.Add("public");
+                    break;
+                case TypeAttributes.NotPublic:
+                    accessModifiers.Add("private");
+                    break;
+                case TypeAttributes.NestedPublic:
+                    accessModifiers.Add("public");
+                    break;
+                case TypeAttributes.NestedPrivate:
+                    accessModifiers.Add("private");
+                    break;
+                case TypeAttributes.NestedFamily:
+                    accessModifiers.Add("protected");
+                    break;
+                case TypeAttributes.NestedAssembly:
+                    accessModifiers.Add("internal");
+                    break;
+                case TypeAttributes.NestedFamANDAssem:
+                    accessModifiers.Add("private protected");
+                    break;
+                case TypeAttributes.NestedFamORAssem:
+                    accessModifiers.Add("protected internal");
+                    break;
+            }
+            return accessModifiers;
         }
 
         private AccessModifiers GetModifiers()
