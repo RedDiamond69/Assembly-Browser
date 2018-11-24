@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Declarations\Members\AсcessModifiers\AccessModifiers.cs" />
+    <Compile Include="Declarations\Members\AсcessModifiers\AccessorsModifiers.cs" />
     <Compile Include="Declarations\Members\EventDeclaration.cs" />
     <Compile Include="Declarations\Members\FieldDeclaration.cs" />
     <Compile Include="Declarations\Members\MethodDeclaration.cs" />
