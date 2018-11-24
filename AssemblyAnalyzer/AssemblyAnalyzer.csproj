@@ -46,6 +46,7 @@
     <Compile Include="Declarations\Members\EventDeclaration.cs" />
     <Compile Include="Declarations\Members\FieldDeclaration.cs" />
     <Compile Include="Declarations\Members\IMember.cs" />
+    <Compile Include="Declarations\Members\MemberBuilders\IMemberBuilder.cs" />
     <Compile Include="Declarations\Members\MethodDeclaration.cs" />
     <Compile Include="Declarations\Members\OptionDeclaration.cs" />
     <Compile Include="Declarations\Members\PropertyDeclaration.cs" />
@@ -55,5 +56,6 @@
     <Compile Include="Info\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
