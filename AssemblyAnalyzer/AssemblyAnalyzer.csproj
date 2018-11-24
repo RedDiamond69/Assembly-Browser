@@ -50,6 +50,7 @@
     <Compile Include="Declarations\Members\MemberBuilders\FieldBuilder.cs" />
     <Compile Include="Declarations\Members\MemberBuilders\IMemberBuilder.cs" />
     <Compile Include="Declarations\Members\MemberBuilders\MethodBuilder.cs" />
+    <Compile Include="Declarations\Members\MemberBuilders\PropertyBuilder.cs" />
     <Compile Include="Declarations\Members\MethodDeclaration.cs" />
     <Compile Include="Declarations\Members\OptionDeclaration.cs" />
     <Compile Include="Declarations\Members\PropertyDeclaration.cs" />
