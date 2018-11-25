@@ -39,7 +39,15 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 
         public object Build()
         {
-            throw new NotImplementedException();
+            string name = _pInfo.Name;
+            string typeName = _pInfo.ParameterType.Name;
+            bool isClass = _pInfo.ParameterType.IsClass | _pInfo.ParameterType.IsInterface;
+            bool isGeneric = _pInfo.ParameterType.IsGenericType;
+            AccessModifiers accessModifiers = GetModifiers();
+            List<string> genericOptions = new List<string>();
+            if (isGeneric)
+                genericOptions = GetGenericOptions();
+            return new OptionDeclaration(name, typeName, isGeneric, isClass, accessModifiers, genericOptions);
         }
     }
 }
