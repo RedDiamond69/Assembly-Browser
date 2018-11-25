@@ -70,7 +70,14 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 
         public object Build()
         {
-            throw new NotImplementedException();
+            string name = _fInfo.Name;
+            string typeName = _fInfo.FieldType.Name;
+            bool isGeneric = _fInfo.FieldType.IsGenericType;
+            AccessModifiers modifiers = GetModifiers();
+            List<string> genericOptions = new List<string>();
+            if (isGeneric)
+                genericOptions = GetGenericOptions();
+            return new FieldDeclaration(name, typeName, isGeneric, modifiers, genericOptions);
         }
     }
 }
