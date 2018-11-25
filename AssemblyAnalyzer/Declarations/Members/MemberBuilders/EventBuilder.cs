@@ -63,7 +63,10 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 
         public object Build()
         {
-            throw new NotImplementedException();
+            string name = _eInfo.Name;
+            string typeName = _eInfo.EventHandlerType.Name;
+            AccessModifiers modifiers = GetModifiers();
+            return new EventDeclaration(name, typeName, modifiers);
         }
     }
 }
