@@ -94,7 +94,16 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 
         public object Build()
         {
-            throw new NotImplementedException();
+            string name = _propInfo.Name;
+            string typeName = _propInfo.PropertyType.Name;
+            bool canRead = _propInfo.CanRead;
+            bool canWrite = _propInfo.CanWrite;
+            bool isGeneric = _propInfo.PropertyType.IsGenericType;
+            AccessorsModifiers accessorsModifiers = GetAccessorsModifiers();
+            List<string> genericOptions = new List<string>();
+            if (isGeneric)
+                genericOptions = GetGenericOptions();
+            return new PropertyDeclaration(name, typeName, isGeneric, canRead, canWrite, accessorsModifiers, genericOptions);
         }
     }
 }
