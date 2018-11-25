@@ -59,6 +59,15 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
             return new AccessModifiers(modifiers, sharpModifiers);
         }
 
+        private List<string> GetGenericOptions()
+        {
+            List<string> genericOptions = new List<string>();
+            List<Type> genericArgs = _fInfo.FieldType.GetGenericTypeDefinition().GetGenericArguments().ToList<Type>();
+            foreach (Type type in genericArgs)
+                genericOptions.Add(type.Name);
+            return genericOptions;
+        }
+
         public object Build()
         {
             throw new NotImplementedException();
