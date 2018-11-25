@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 {
-    public class PropertyBuilder
+    public class PropertyBuilder : IMemberBuilder
     {
         private readonly PropertyInfo _propInfo;
 
@@ -90,6 +90,11 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
             foreach (Type type in genericArgs)
                 genericOptions.Add(type.Name);
             return genericOptions;
+        }
+
+        public object Build()
+        {
+            throw new NotImplementedException();
         }
     }
 }
