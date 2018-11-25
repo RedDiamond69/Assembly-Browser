@@ -82,5 +82,14 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
             }
             return new AccessorsModifiers(modifiers, sharpModifiers, getters, setters);
         }
+
+        private List<string> GetGenericOptions()
+        {
+            List<string> genericOptions = new List<string>();
+            List<Type> genericArgs = _propInfo.PropertyType.GetGenericTypeDefinition().GetGenericArguments().ToList<Type>();
+            foreach (Type type in genericArgs)
+                genericOptions.Add(type.Name);
+            return genericOptions;
+        }
     }
 }
