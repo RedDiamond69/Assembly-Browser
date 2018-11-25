@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 {
-    public class EventBuilder
+    public class EventBuilder : IMemberBuilder
     {
+        public EventBuilder()
+        {
+        }
+
+        public object Build()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
