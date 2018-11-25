@@ -11,9 +11,7 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
     {
         private readonly FieldInfo _fInfo;
 
-        public FieldBuilder()
-        {
-        }
+        public FieldBuilder(MemberInfo member) => _fInfo = (FieldInfo)member;
 
         public object Build()
         {
