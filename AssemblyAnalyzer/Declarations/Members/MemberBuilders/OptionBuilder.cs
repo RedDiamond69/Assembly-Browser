@@ -8,5 +8,8 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
 {
     public class OptionBuilder
     {
+        public OptionBuilder()
+        {
+        }
     }
 }
