@@ -16,6 +16,7 @@ namespace AssemblyAnalyzer.Declarations.Members.AсcessModifiers
             get => _modifiers;
             private set { }
         }
+
         public List<string> SharpModifiers
         {
             get => _sharpModifiers;
