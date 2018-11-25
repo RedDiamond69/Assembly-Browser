@@ -61,9 +61,48 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
             return new AccessModifiers(modifiers, sharpModifiers);
         }
 
+        private bool IsExtensionMethod(OptionDeclaration optionDeclaration) => optionDeclaration.IsClass && _mInfo.IsStatic;
+
         public object Build()
         {
-            throw new NotImplementedException();
+            string name = String.Empty;
+            string returnTypeName = String.Empty;
+            bool isGeneric = _mInfo.IsGenericMethod;
+            bool isConstructor = default(bool);
+            List<string> genericMethodOptions = new List<string>();
+            if (isGeneric)
+            {
+                List<Type> genericArgs = _mInfo.GetGenericArguments().ToList<Type>();
+                foreach (Type type in genericArgs)
+                    genericMethodOptions.Add(type.Name);
+            }
+            AccessModifiers accessModifiers = GetModifiers();
+            List<OptionDeclaration> options = new List<OptionDeclaration>();
+            if (_mInfo is MethodInfo)
+            {
+                MethodInfo methodInfo = (MethodInfo)_mInfo;
+                name = methodInfo.Name;
+                returnTypeName = methodInfo.ReturnType.Name;
+                foreach (ParameterInfo param in methodInfo.GetParameters())
+                {
+                    Builder builder = new Builder(new OptionBuilder(param));
+                    options.Add((OptionDeclaration)builder.Create());
+                }
+            }
+            else if (_mInfo is ConstructorInfo)
+            {
+                ConstructorInfo cInfo = (ConstructorInfo)_mInfo;
+                name = cInfo.Name;
+                foreach (ParameterInfo param in cInfo.GetParameters())
+                {
+                    Builder builder = new Builder(new OptionBuilder(param));
+                    options.Add((OptionDeclaration)builder.Create());
+                }
+                isConstructor = true;
+            }
+            bool isExtensionMethod = options.Count > 0 ? IsExtensionMethod(options.First()) : false;
+            return new MethodDeclaration(name, returnTypeName, isConstructor, isGeneric, 
+                isExtensionMethod, accessModifiers, options, genericMethodOptions);
         }
     }
 }
