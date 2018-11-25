@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssemblyAnalyzer.Declarations.Members.AсcessModifiers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -38,6 +39,26 @@ namespace AssemblyAnalyzer.Declarations.Members.MemberBuilders
                     break;
             }
             return accessModifiers;
+        }
+
+        private AccessModifiers GetModifiers()
+        {
+            List<string> modifiers = new List<string>();
+            List<string> sharpModifiers = new List<string>();
+            EventAttributes eventAttributes = _eInfo.Attributes;
+            modifiers = eventAttributes.ToString().Split(',').ToList();
+            modifiers = modifiers.Select(str => str.Trim().ToLower()).ToList();
+            MethodAttributes visibily = _eInfo.AddMethod.Attributes & MethodAttributes.MemberAccessMask;
+            sharpModifiers = GetAccessModifiers(visibily);
+            if ((_eInfo.AddMethod.Attributes & MethodAttributes.Abstract) != 0)
+                sharpModifiers.Add("abstract");
+            if ((_eInfo.AddMethod.Attributes & MethodAttributes.Final) != 0)
+                sharpModifiers.Add("sealed");
+            if ((_eInfo.AddMethod.Attributes & MethodAttributes.Virtual) != 0)
+                sharpModifiers.Add("virtual");
+            if ((_eInfo.AddMethod.Attributes & MethodAttributes.Static) != 0)
+                sharpModifiers.Add("static");
+            return new AccessModifiers(modifiers, sharpModifiers);
         }
 
         public object Build()
