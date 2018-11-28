@@ -10,6 +10,7 @@ namespace AssemblyAnalyzer.Declarations.Members
     public class FieldDeclaration : IMember, IGenerical
     {
         private readonly AccessModifiers _accessModifiers;
+        private readonly List<string> _genericalParams;
 
         public string Name
         {
@@ -26,7 +27,8 @@ namespace AssemblyAnalyzer.Declarations.Members
         }
         public List<string> GenericalParams
         {
-
+            get => _genericalParams;
+            private set { }
         }
 
         public FieldDeclaration(string name)
