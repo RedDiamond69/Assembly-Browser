@@ -63,6 +63,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\AssemblyVM.cs" />
+    <Compile Include="ViewModel\EventVM.cs" />
+    <Compile Include="ViewModel\FieldVM.cs" />
+    <Compile Include="ViewModel\MainVM.cs" />
+    <Compile Include="ViewModel\MethodVM.cs" />
+    <Compile Include="ViewModel\NamespaceVM.cs" />
+    <Compile Include="ViewModel\PropertyVM.cs" />
+    <Compile Include="ViewModel\TypeVM.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,7 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
