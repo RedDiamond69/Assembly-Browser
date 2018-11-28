@@ -45,6 +45,7 @@
     <Compile Include="Declarations\Members\AсcessModifiers\AccessorsModifiers.cs" />
     <Compile Include="Declarations\Members\EventDeclaration.cs" />
     <Compile Include="Declarations\Members\FieldDeclaration.cs" />
+    <Compile Include="Declarations\Members\IGenerical.cs" />
     <Compile Include="Declarations\Members\IMember.cs" />
     <Compile Include="Declarations\Members\MemberBuilders\Builder.cs" />
     <Compile Include="Declarations\Members\MemberBuilders\EventBuilder.cs" />

@@ -12,7 +12,7 @@ namespace AssemblyAnalyzer.Declarations.Members
         public string Name => throw new NotImplementedException();
         public AccessModifiers AccessModifiers => throw new NotImplementedException();
 
-        public FieldDeclaration()
+        public FieldDeclaration(string name)
         {
         }
     }
