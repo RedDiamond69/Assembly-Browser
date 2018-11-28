@@ -14,7 +14,13 @@ namespace AssemblyAnalyzer.Declarations.Members
 
         public string Name
         {
-
+            get;
+            private set;
+        }
+        public string TypeName
+        {
+            get;
+            private set;
         }
         public AccessModifiers AccessModifiers
         {
@@ -23,7 +29,8 @@ namespace AssemblyAnalyzer.Declarations.Members
         }
         public bool IsGenerical
         {
-
+            get;
+            private set;
         }
         public List<string> GenericalParams
         {
@@ -31,8 +38,13 @@ namespace AssemblyAnalyzer.Declarations.Members
             private set { }
         }
 
-        public FieldDeclaration(string name)
+        public FieldDeclaration(string name, string tName, bool isGenerical, AccessModifiers accessModifiers, List<string> genericalParams)
         {
+            Name = name;
+            TypeName = tName;
+            IsGenerical = isGenerical;
+            AccessModifiers = accessModifiers;
+            GenericalParams = genericalParams;
         }
     }
 }
