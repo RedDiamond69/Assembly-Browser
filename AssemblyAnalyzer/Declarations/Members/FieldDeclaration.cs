@@ -9,12 +9,25 @@ namespace AssemblyAnalyzer.Declarations.Members
 {
     public class FieldDeclaration : IMember, IGenerical
     {
-        public string Name => throw new NotImplementedException();
-        public AccessModifiers AccessModifiers => throw new NotImplementedException();
+        private readonly AccessModifiers _accessModifiers;
 
-        public bool IsGenerical => throw new NotImplementedException();
+        public string Name
+        {
 
-        public List<string> GenericalParams => throw new NotImplementedException();
+        }
+        public AccessModifiers AccessModifiers
+        {
+            get => _accessModifiers;
+            private set { }
+        }
+        public bool IsGenerical
+        {
+
+        }
+        public List<string> GenericalParams
+        {
+
+        }
 
         public FieldDeclaration(string name)
         {
