@@ -7,10 +7,14 @@ using AssemblyAnalyzer.Declarations.Members.AсcessModifiers;
 
 namespace AssemblyAnalyzer.Declarations.Members
 {
-    public class FieldDeclaration : IMember
+    public class FieldDeclaration : IMember, IGenerical
     {
         public string Name => throw new NotImplementedException();
         public AccessModifiers AccessModifiers => throw new NotImplementedException();
+
+        public bool IsGenerical => throw new NotImplementedException();
+
+        public List<string> GenericalParams => throw new NotImplementedException();
 
         public FieldDeclaration(string name)
         {
