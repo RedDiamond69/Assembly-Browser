@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssemblyAnalyzer.Declarations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace AssemblyBrowser.ViewModel
 {
     public class NamespaceVM
     {
+        private readonly NamespaceDeclaration _namespaceDeclaration;
+
+        public NamespaceVM()
+        {
+        }
     }
 }

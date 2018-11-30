@@ -103,6 +103,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AssemblyAnalyzer\AssemblyAnalyzer.csproj">
+      <Project>{597C8A90-F8D3-49F5-8B3E-2D3AA2B63301}</Project>
+      <Name>AssemblyAnalyzer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
