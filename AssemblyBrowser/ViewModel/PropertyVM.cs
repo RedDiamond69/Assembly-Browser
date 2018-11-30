@@ -9,11 +9,22 @@ namespace AssemblyBrowser.ViewModel
 {
     public class PropertyVM
     {
-        private PropertyDeclaration property;
+        private readonly PropertyDeclaration _propertyDeclaration;
+
+        public string StringPresentation
+        {
+            get => GetPresentation();
+            private set { }
+        }
+
+        private string GetPresentation()
+        {
+            throw new NotImplementedException();
+        }
 
         public PropertyVM(PropertyDeclaration property)
         {
-            this.property = property;
+            _propertyDeclaration = property;
         }
     }
 }
