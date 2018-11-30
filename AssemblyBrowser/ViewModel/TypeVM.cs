@@ -1,4 +1,5 @@
 ﻿using AssemblyAnalyzer.Declarations;
+using AssemblyAnalyzer.Declarations.Members;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,24 @@ namespace AssemblyBrowser.ViewModel
         public string StringPresentation
         {
             get => GetPresentation();
+            private set { }
+        }
+
+        public IEnumerable<object> Members
+        {
+            get
+            {
+                foreach (FieldDeclaration field in _typeDeclaration.FieldsDeclaration)
+                    yield return new FieldVM(field);
+                foreach (PropertyDeclaration property in _typeDeclaration.PropertyDeclarations)
+                    yield return new PropertyVM(property);
+                foreach (MethodDeclaration method in _typeDeclaration.MethodDeclarations)
+                    yield return new MethodVM(method);
+                foreach (EventDeclaration eventDeclaration in _typeDeclaration.EventDeclarations)
+                    yield return new EventVM(eventDeclaration);
+                foreach (TypeDeclaration type in _typeDeclaration.TypeDeclarations)
+                    yield return new TypeVM(type);
+            }
             private set { }
         }
 
