@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\AssemblyBrowserModel.cs" />
     <Compile Include="ViewModel\AssemblyVM.cs" />
     <Compile Include="ViewModel\EventVM.cs" />
     <Compile Include="ViewModel\FieldVM.cs" />
@@ -102,8 +103,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
