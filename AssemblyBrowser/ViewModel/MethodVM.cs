@@ -9,11 +9,11 @@ namespace AssemblyBrowser.ViewModel
 {
     public class MethodVM
     {
-        private MethodDeclaration method;
+        private readonly MethodDeclaration _methodDeclaration;
 
-        public MethodVM(MethodDeclaration method)
+        public MethodVM(MethodDeclaration methodDeclaration)
         {
-            this.method = method;
+            _methodDeclaration = methodDeclaration;
         }
     }
 }
