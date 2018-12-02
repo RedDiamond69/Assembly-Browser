@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AssemblyAnalyzer.Info;
+using AssemblyBrowser.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,6 +11,35 @@ namespace AssemblyBrowser.Model
 {
     public class AssemblyBrowserModel : INotifyPropertyChanged
     {
+        private readonly AssemblyAnalyzer.AssemblyAnalyzer _assemblyAnalyzer;
+        private AssemblyVM _assemblyVM;
+
+        public AssemblyBrowserModel() => AssemblyAnalyzer.AssemblyAnalyzer.GetInstance();
+
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public AssemblyVM AssemblyVM
+        {
+            get => _assemblyVM;
+            private set
+            {
+                if (_assemblyVM != value)
+                {
+                    _assemblyVM = value;
+                    RaisePropertyChanged("AssemblyVM");
+                }
+            }
+        }
+
+        public void Open(string asmPath)
+        {
+            AssemblyInfo assemblyInfo = _assemblyAnalyzer.GetInfo(asmPath);
+            AssemblyVM = new AssemblyVM(assemblyInfo);
+        }
+
+        void RaisePropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
     }
 }
