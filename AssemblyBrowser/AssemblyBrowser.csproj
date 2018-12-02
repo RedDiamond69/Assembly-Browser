@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Command\Commands.cs" />
     <Compile Include="Model\AssemblyBrowserModel.cs" />
     <Compile Include="ViewModel\AssemblyVM.cs" />
     <Compile Include="ViewModel\EventVM.cs" />
