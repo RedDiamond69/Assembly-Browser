@@ -13,10 +13,9 @@ namespace AssemblyBrowser.Model
     {
         private readonly AssemblyAnalyzer.AssemblyAnalyzer _assemblyAnalyzer;
         private AssemblyVM _assemblyVM;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public AssemblyBrowserModel() => AssemblyAnalyzer.AssemblyAnalyzer.GetInstance();
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public AssemblyVM AssemblyVM
         {
@@ -37,9 +36,7 @@ namespace AssemblyBrowser.Model
             AssemblyVM = new AssemblyVM(assemblyInfo);
         }
 
-        void RaisePropertyChanged(string property)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
+        public void RaisePropertyChanged(string property) => PropertyChanged?.Invoke(this, 
+            new PropertyChangedEventArgs(property));
     }
 }
