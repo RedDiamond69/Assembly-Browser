@@ -30,7 +30,7 @@ namespace AssemblyBrowser.ViewModel
             return stringPresentation;
         }
 
-        public string GetAccessModifiers(List<string> accessModifiers)
+        private string GetAccessModifiers(List<string> accessModifiers)
         {
             string modifiersPresentation = String.Empty;
             foreach (string modifier in accessModifiers)
