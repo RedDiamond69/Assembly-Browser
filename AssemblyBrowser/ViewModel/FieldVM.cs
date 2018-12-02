@@ -11,6 +11,12 @@ namespace AssemblyBrowser.ViewModel
     {
         private readonly FieldDeclaration _fieldDeclaration;
 
+        public string StringPresentation
+        {
+            get => GetPresentation();
+            private set { }
+        }
+
         public FieldVM(FieldDeclaration fieldDeclaration)
         {
             _fieldDeclaration = fieldDeclaration;
