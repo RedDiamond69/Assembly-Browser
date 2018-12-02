@@ -15,5 +15,22 @@ namespace AssemblyBrowser.ViewModel
         {
             _fieldDeclaration = fieldDeclaration;
         }
+
+        public string GetAccessModifiers(List<string> accessModifiers)
+        {
+            string modifiersPresentation = String.Empty;
+            foreach (string modifier in accessModifiers)
+                modifiersPresentation += String.Format("{0} ", modifier);
+            return modifiersPresentation.TrimEnd();
+        }
+
+        private string GetPresentation()
+        {
+            string typeName = _fieldDeclaration.TypeName;
+            if (_fieldDeclaration.IsGenerical)
+                typeName += String.Format("<{0}>", GetAccessModifiers(_fieldDeclaration.GenericalParams));
+            return String.Format("{0} {1} {2}", GetAccessModifiers(_fieldDeclaration.AccessModifiers.SharpModifiers),
+                typeName, _fieldDeclaration.Name);
+        }
     }
 }
