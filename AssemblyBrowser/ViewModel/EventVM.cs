@@ -9,11 +9,17 @@ namespace AssemblyBrowser.ViewModel
 {
     public class EventVM
     {
-        private EventDeclaration eventDeclaration;
+        private EventDeclaration _eventDeclaration;
+
+        public string StringPresentation
+        {
+            get => GetPresentation();
+            private set { }
+        }
 
         public EventVM(EventDeclaration eventDeclaration)
         {
-            this.eventDeclaration = eventDeclaration;
+            _eventDeclaration = eventDeclaration;
         }
     }
 }
