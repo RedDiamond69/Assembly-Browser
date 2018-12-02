@@ -9,11 +9,11 @@ namespace AssemblyBrowser.ViewModel
 {
     public class FieldVM
     {
-        private FieldDeclaration field;
+        private readonly FieldDeclaration _fieldDeclaration;
 
-        public FieldVM(FieldDeclaration field)
+        public FieldVM(FieldDeclaration fieldDeclaration)
         {
-            this.field = field;
+            _fieldDeclaration = fieldDeclaration;
         }
     }
 }
