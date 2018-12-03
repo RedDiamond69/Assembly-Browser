@@ -21,7 +21,7 @@ namespace AssemblyAnalyzer.Declarations.Members
         {
             _name = name;
             _typeName = tName;
-            _accessModifiers = _accessModifiers;
+            _accessModifiers = accessModifiers;
         }
     }
 }
