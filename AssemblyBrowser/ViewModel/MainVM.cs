@@ -1,12 +1,7 @@
 ﻿using AssemblyBrowser.Model;
 using AssemblyBrowser.Command;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AssemblyBrowser.ViewModel
 {

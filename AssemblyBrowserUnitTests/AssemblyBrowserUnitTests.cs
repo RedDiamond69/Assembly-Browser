@@ -1,5 +1,4 @@
-﻿using System;
-using AssemblyAnalyzer.Info;
+﻿using AssemblyAnalyzer.Info;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AssemblyBrowserUnitTests
