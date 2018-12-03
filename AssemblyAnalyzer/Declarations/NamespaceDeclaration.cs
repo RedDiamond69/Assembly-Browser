@@ -9,23 +9,16 @@ namespace AssemblyAnalyzer.Declarations
     public class NamespaceDeclaration
     {
         private readonly List<TypeDeclaration> _typeDeclarations;
+        private readonly string _name;
 
-        public string Name
-        {
-            get;
-            private set;
-        }
-        public List<TypeDeclaration> TypeDeclarations
-        {
-            get => _typeDeclarations;
-            private set { }
-        }
+        public string Name => _name;
+        public List<TypeDeclaration> TypeDeclarations => _typeDeclarations;
 
         public void AddType(TypeDeclaration typeDeclaration) => _typeDeclarations.Add(typeDeclaration);
 
         public NamespaceDeclaration(string name)
         {
-            Name = name;
+            _name = name;
             _typeDeclarations = new List<TypeDeclaration>();
         }
     }

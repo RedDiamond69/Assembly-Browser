@@ -18,97 +18,46 @@ namespace AssemblyAnalyzer.Declarations
         private readonly List<MethodDeclaration> _methodsDeclaration;
         private readonly List<EventDeclaration> _eventsDeclaration;
         private readonly List<TypeDeclaration> _nestedTypesDeclaration;
+        private readonly string _baseType;
+        private readonly bool _isInterface;
+        private readonly bool _isGenerical;
+        private readonly string _name;
+        private readonly string _fullName;
 
-        public string BaseType
-        {
-            get;
-            private set;
-        }
-        public bool IsInterface
-        {
-            get;
-            private set;
-        }
-        public bool IsGenerical
-        {
-            get;
-            private set;
-        }
-        public string Name
-        {
-            get;
-            private set;
-        }
-        public string FullName
-        {
-            get;
-            private set;
-        }
-        public AccessModifiers AccessModifiers
-        {
-            get => _accessModifiers;
-            private set { }
-        }
-        public List<string> ImplementedInterfaces
-        {
-            get => _implementedInterfaces;
-            private set { }
-        }
-        public List<string> GenericalParams
-        {
-            get => _genericalParams;
-            private set { }
-        }
-        public List<FieldDeclaration> FieldsDeclaration
-        {
-            get => _fieldsDeclaration;
-            private set { }
-        }
-        public List<PropertyDeclaration> PropertyDeclarations
-        {
-            get => _propertiesDeclaration;
-            private set { }
-        }
-        public List<MethodDeclaration> MethodDeclarations
-        {
-            get => _methodsDeclaration;
-            private set { }
-        }
-        public List<EventDeclaration> EventDeclarations
-        {
-            get => _eventsDeclaration;
-            private set { }
-        }
-        public IEnumerable<IMember> Members
-        {
-            get => ((IEnumerable<IMember>)_fieldsDeclaration).Concat(_propertiesDeclaration).Concat(_methodsDeclaration).Concat(_eventsDeclaration);
-            private set { }
-        }
-        public List<TypeDeclaration> TypeDeclarations
-        {
-            get => _nestedTypesDeclaration;
-            private set { }
-        }
+        public string BaseType => _baseType;
+        public bool IsInterface => _isInterface;
+        public bool IsGenerical => _isGenerical;
+        public string Name => _name;
+        public string FullName => _fullName;
+        public AccessModifiers AccessModifiers => _accessModifiers;
+        public List<string> ImplementedInterfaces => _implementedInterfaces;
+        public List<string> GenericalParams => _genericalParams;
+        public List<FieldDeclaration> FieldsDeclaration => _fieldsDeclaration;
+        public List<PropertyDeclaration> PropertyDeclarations => _propertiesDeclaration;
+        public List<MethodDeclaration> MethodDeclarations => _methodsDeclaration;
+        public List<EventDeclaration> EventDeclarations => _eventsDeclaration;
+        public IEnumerable<IMember> Members => ((IEnumerable<IMember>)_fieldsDeclaration).Concat(_propertiesDeclaration).Concat(_methodsDeclaration).Concat(_eventsDeclaration);
+        public List<TypeDeclaration> TypeDeclarations => _nestedTypesDeclaration;
 
         public TypeDeclaration(string name, string fullName, string baseType, bool isInterface, bool isGenerical,
             AccessModifiers accessModifiers, List<string> implementedInterfaces, List<string> genericalParams,
-            List<FieldDeclaration> fieldDeclarations, List<PropertyDeclaration> propertyDeclarations, 
-            List<MethodDeclaration> methodDeclarations, List<EventDeclaration> eventDeclarations, 
+            List<FieldDeclaration> fieldDeclarations, List<PropertyDeclaration> propertyDeclarations,
+            List<MethodDeclaration> methodDeclarations, List<EventDeclaration> eventDeclarations,
             List<TypeDeclaration> typeDeclarations)
         {
-            Name = name;
-            FullName = fullName;
-            BaseType = baseType;
-            IsInterface = isInterface;
-            IsGenerical = isGenerical;
-            AccessModifiers = accessModifiers;
-            ImplementedInterfaces = implementedInterfaces;
-            GenericalParams = genericalParams;
-            FieldsDeclaration = fieldDeclarations;
-            PropertyDeclarations = propertyDeclarations;
-            MethodDeclarations = methodDeclarations;
-            EventDeclarations = eventDeclarations;
-            TypeDeclarations = typeDeclarations;
+            _name = name;
+            _fullName = fullName;
+            _baseType = baseType;
+            _isInterface = isInterface;
+            _isGenerical = isGenerical;
+            _accessModifiers = accessModifiers;
+            _implementedInterfaces = implementedInterfaces;
+            _genericalParams = genericalParams;
+            _fieldsDeclaration = fieldDeclarations;
+            _propertiesDeclaration = propertyDeclarations;
+            _methodsDeclaration = methodDeclarations;
+            _eventsDeclaration = eventDeclarations;
+            _nestedTypesDeclaration = typeDeclarations;
         }
     }
 }

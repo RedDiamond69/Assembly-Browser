@@ -11,22 +11,13 @@ namespace AssemblyAnalyzer.Declarations.Members.AсcessModifiers
         private readonly List<string> _getters;
         private readonly List<string> _setters;
 
-        public List<string> Getters
-        {
-            get => _getters;
-            private set { }
-        }
-
-        public List<string> Setters
-        {
-            get => _setters;
-            private set { }
-        }
+        public List<string> Getters => _getters;
+        public List<string> Setters => _setters;
 
         public AccessorsModifiers(List<string> modifiers, List<string> sharpModifiers, List<string> getters, List<string> setters) : base(modifiers, sharpModifiers)
         {
-            Getters = getters;
-            Setters = setters;
+            _getters = getters;
+            _setters = setters;
         }
     }
 }

@@ -11,11 +11,7 @@ namespace AssemblyAnalyzer.Info
     {
         private readonly List<NamespaceDeclaration> _namespaceDeclarations;
 
-        public List<NamespaceDeclaration> NamespaceDeclarations
-        {
-            get => _namespaceDeclarations;
-            private set { }
-        }
+        public List<NamespaceDeclaration> NamespaceDeclarations => _namespaceDeclarations;
 
         public void AddOrCreateNamespaceDeclaration(NamespaceDeclaration namespaceDeclaration)
         {

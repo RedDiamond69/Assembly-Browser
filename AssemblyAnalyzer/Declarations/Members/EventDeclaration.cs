@@ -10,28 +10,18 @@ namespace AssemblyAnalyzer.Declarations.Members
     public class EventDeclaration : IMember
     {
         private readonly AccessModifiers _accessModifiers;
+        private readonly string _name;
+        private readonly string _typeName;
 
-        public string Name
-        {
-            get;
-            private set;
-        }
-        public string TypeName
-        {
-            get;
-            private set;
-        }
-        public AccessModifiers AccessModifiers
-        {
-            get => _accessModifiers;
-            private set { }
-        }
+        public string Name => _name;
+        public string TypeName => _typeName;
+        public AccessModifiers AccessModifiers => _accessModifiers;
 
         public EventDeclaration(string name, string tName, AccessModifiers accessModifiers)
         {
-            Name = name;
-            TypeName = tName;
-            AccessModifiers = _accessModifiers;
+            _name = name;
+            _typeName = tName;
+            _accessModifiers = _accessModifiers;
         }
     }
 }

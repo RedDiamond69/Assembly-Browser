@@ -11,40 +11,23 @@ namespace AssemblyAnalyzer.Declarations.Members
     {
         private readonly AccessModifiers _accessModifiers;
         private readonly List<string> _genericalParams;
+        private readonly string _name;
+        private readonly string _typeName;
+        private readonly bool _isGenerical;
 
-        public string Name
-        {
-            get;
-            private set;
-        }
-        public string TypeName
-        {
-            get;
-            private set;
-        }
-        public AccessModifiers AccessModifiers
-        {
-            get => _accessModifiers;
-            private set { }
-        }
-        public bool IsGenerical
-        {
-            get;
-            private set;
-        }
-        public List<string> GenericalParams
-        {
-            get => _genericalParams;
-            private set { }
-        }
+        public string Name => _name;
+        public string TypeName => _typeName;
+        public AccessModifiers AccessModifiers => _accessModifiers;
+        public bool IsGenerical => _isGenerical;
+        public List<string> GenericalParams => _genericalParams;
 
         public FieldDeclaration(string name, string tName, bool isGenerical, AccessModifiers accessModifiers, List<string> genericalParams)
         {
-            Name = name;
-            TypeName = tName;
-            IsGenerical = isGenerical;
-            AccessModifiers = accessModifiers;
-            GenericalParams = genericalParams;
+            _name = name;
+            _typeName = tName;
+            _isGenerical = isGenerical;
+            _accessModifiers = accessModifiers;
+            _genericalParams = genericalParams;
         }
     }
 }
