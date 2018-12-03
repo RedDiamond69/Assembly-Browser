@@ -4,6 +4,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:vm="clr-namespace:AssemblyBrowser.ViewModel"
     WindowStartupLocation="CenterScreen"
+    Icon="pack://application:,,,/Resources/Icons/MainIcon.png"
 	Title="Assembly Analyzer" Width="800" Height="600"
 	DataContext="{DynamicResource MainVM}">
     <Window.Resources>
@@ -14,7 +15,7 @@
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
-                    Source="" 
+                    Source="pack://application:,,,/Resources/Icons/Namespace_16x.png" 
                     Width="16" Height="16"/>
                 <TextBlock 
                     Text="{Binding StringPresentation}" 
@@ -27,7 +28,7 @@
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
-                    Source="" 
+                    Source="pack://application:,,,/Resources/Icons/Class_16x.png" 
                     Width="16" Height="16"/>
                 <TextBlock 
                     Text="{Binding StringPresentation}" 
@@ -39,7 +40,7 @@
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
-                    Source="" 
+                    Source="pack://application:,,,/Resources/Icons/Field_16x.png" 
                     Width="16" Height="16"/>
                 <TextBlock 
                     Text="{Binding StringPresentation}" 
@@ -51,7 +52,7 @@
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
-                    Source="" 
+                    Source="pack://application:,,,/Resources/Icons/Property_16x.png" 
                     Width="16" Height="16"/>
                 <TextBlock 
                     Text="{Binding StringPresentation}" 
@@ -63,7 +64,7 @@
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
-                    Source="" 
+                    Source="pack://application:,,,/Resources/Icons/Method_16x.png" 
                     Width="16" Height="16"/>
                 <TextBlock 
                     Text="{Binding StringPresentation}" 
@@ -75,7 +76,7 @@
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
-                    Source="" 
+                    Source="pack://application:,,,/Resources/Icons/Event_16x.png" 
                     Width="16" Height="16"/>
                 <TextBlock 
                     Text="{Binding StringPresentation}" 
@@ -117,7 +118,8 @@
                 x:Name="assemblyInfoTreeView"
                 Background="Beige"
                 MaxHeight="{Binding ElementName=MainScrollViewer, Path=ActualHeight}">
-                <TreeViewItem 
+                <TreeViewItem
+                    FontSize="14"
                     ItemsSource="{Binding AssemblyVM.DeclaratedNamespaces}" 
                     Header="Information about open assembly:"/>
             </TreeView>
