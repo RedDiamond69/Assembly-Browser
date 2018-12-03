@@ -15,7 +15,7 @@ namespace AssemblyBrowser.Model
         private AssemblyVM _assemblyVM;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AssemblyBrowserModel() => AssemblyAnalyzer.AssemblyAnalyzer.GetInstance();
+        public AssemblyBrowserModel() => _assemblyAnalyzer = AssemblyAnalyzer.AssemblyAnalyzer.GetInstance();
 
         public AssemblyVM AssemblyVM
         {
