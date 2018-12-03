@@ -9,16 +9,25 @@ namespace AssemblyBrowser.Command
 {
     public class Commands : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        private readonly Action<object> _action;
+        private readonly Predicate<object> _canBeExecuting;
 
-        public bool CanExecute(object parameter)
+        public event EventHandler CanExecuteChanged
         {
-            throw new NotImplementedException();
+            add => CommandManager.RequerySuggested += value;
+            remove => CommandManager.RequerySuggested -= value;
         }
 
-        public void Execute(object parameter)
+        public Commands(Action<object> action) : this(action, null) { }
+
+        public Commands(Action<object> action, Predicate<object> predicate)
         {
-            throw new NotImplementedException();
+            _action = action ?? throw new ArgumentNullException("execute");
+            _canBeExecuting = predicate;
         }
+
+        public bool CanExecute(object parameter) => _canBeExecuting == null ? true : _canBeExecuting(parameter);
+
+        public void Execute(object parameter) => _action(parameter);
     }
 }
